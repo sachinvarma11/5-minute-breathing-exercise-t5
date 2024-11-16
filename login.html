@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - 5 Minute Meditation</title>
+    <link rel="stylesheet" href="login-styles.css">
+    <!-- Add Google Sign-In API -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo">
+                <img src="meditation-logo.png" alt="Meditation Logo">
+            </div>
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Continue your mindfulness journey</p>
+            
+            <!-- Google Sign-In Button -->
+            <div id="g_id_onload"
+                 data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                 data-context="signin"
+                 data-callback="handleCredentialResponse">
+            </div>
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-size="large"
+                 data-theme="outline"
+                 data-text="signin_with"
+                 data-shape="rectangular"
+                 data-width="300">
+            </div>
+
+            <div class="divider">
+                <span>or</span>
+            </div>
+
+            <!-- Email Login Form -->
+            <form id="loginForm" class="login-form">
+                <div class="input-group">
+                    <input type="email" id="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+
+            <p class="signup-text">
+                Don't have an account? <a href="#" id="showSignup">Sign up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create Account</h2>
+            <form id="signupForm">
+                <div class="input-group">
+                    <input type="text" id="signupName" required>
+                    <label for="signupName">Full Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="signupEmail" required>
+                    <label for="signupEmail">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signupPassword" required>
+                    <label for="signupPassword">Password</label>
+                </div>
+                <button type="submit" class="signup-button">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html> 
